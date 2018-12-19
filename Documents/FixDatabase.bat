@@ -1,0 +1,1 @@
+sqlcmd -S .\SQLEXPRESS -Q "CREATE DATABASE Prospect ON (FILENAME = 'C:\data\Prospect.mdf') FOR ATTACH_FORCE_REBUILD_LOG;"

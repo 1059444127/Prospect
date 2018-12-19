@@ -1,0 +1,51 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:local="clr-namespace:com.cloud.prospect" xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit" xmlns:my1="clr-namespace:System;assembly=mscorlib" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="com.cloud.prospect.StatisticWindow"
+        ShowInTaskbar="False"
+        WindowState="Maximized"  Background="#FFDDF0F9"
+        Title="ProspectReport" Height="768" Width="1280" Closing="Window_Closing" Icon="/Prospect;component/img/logo.png" Loaded="Window_Loaded">
+    <Grid Background="#FFB1CFFF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="150" />
+            </Grid.ColumnDefinitions>
+            <WindowsFormsHost Grid.Column="1">
+                <local:ReportControl x:Name="ucReport" />
+            </WindowsFormsHost>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="364" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <ListBox Height="329" HorizontalAlignment="Left" Margin="6,0,0,0" x:Name="lbxReport" VerticalAlignment="Top" Width="188" SelectionChanged="lbxReport_SelectionChanged" />
+                    <Button Content="设计报表" Height="23" HorizontalAlignment="Left" Margin="119,335,0,0" x:Name="btnDesignReport" Click="btnDesignReport_Click" VerticalAlignment="Top" Width="75" Background="#FFD1F0FF" />
+                </Grid>
+                <Grid Grid.Row="1"/>
+            </Grid>
+            <Grid Grid.Column="2">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock MinHeight="20"  d:LayoutOverrides="HorizontalAlignment" Height="20"><Run Text="开始时间" /></TextBlock>
+                    <my:DatePicker x:Name="dteStart" SelectedDate="{x:Static my1:DateTime.Now}" Width="126"  MinHeight="24" VerticalAlignment="Top" />
+                    <TextBlock  MinHeight="20"  d:LayoutOverrides="HorizontalAlignment"><Run Text="结束时间" /></TextBlock>
+                    <my:DatePicker  x:Name="dteEnd" SelectedDate="{x:Static my1:DateTime.Now}" Width="126" MinHeight="24" VerticalAlignment="Top" />
+                    
+                    <Button Content="刷新报表" Height="23" x:Name="btnRefresh" Width="75" Click="btnRefresh_Click" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="0">
+            <Image Height="60" HorizontalAlignment="Left" Margin="12,12,0,0" x:Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="62" Grid.RowSpan="2" Source="/Prospect;component/img/logo.png" />
+            <TextBlock FontSize="24" FontWeight="Bold"  HorizontalAlignment="Left" Margin="90,12,0,0" x:Name="textBlock1" Text="ProspectReport" VerticalAlignment="Top" Width="194" />
+            <TextBlock FontSize="13"  HorizontalAlignment="Left" Margin="100,49,0,0" x:Name="textBlock2" Text="version 1.0.0" VerticalAlignment="Top" Width="116" />
+        </Grid>
+    </Grid>
+</Window>

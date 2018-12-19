@@ -1,0 +1,11 @@
+﻿<Window x:Class="com.cloud.prospect.ColorTemplateName"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="输入" Height="140" Width="300" ResizeMode="NoResize" Icon="/Prospect;component/img/logo.png">
+    <Grid>
+        <TextBlock Height="18" HorizontalAlignment="Left" Margin="20,12,0,0" Name="textBlock1" Text="请输入伪彩名：" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="20,36,0,0" Name="tbxColorName" VerticalAlignment="Top" Width="229" />
+        <Button Content="OK" Height="23" HorizontalAlignment="Left" Margin="40,66,0,0" Name="btnOK" VerticalAlignment="Top" Width="75" Click="btnOK_Click" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="148,66,0,0" Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click" />
+    </Grid>
+</Window>

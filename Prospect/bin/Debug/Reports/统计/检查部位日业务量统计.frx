@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/01/2014 11:37:12" ReportInfo.Modified="01/03/2014 22:13:53" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM3/HbiZANEYP3Y6oNtE7mrUmT0ytl94C6DYS4DXvgc8JqhVjVQGe7Sc2pOMNI3eDscIcPzTJJXajkgPF9rasF/JuQc+4vn0OzYPvLvzYnTRbKVeAOjY0pELgguGXTLH0V+0/bRfr013PVrvkPNdyGJ2oXK0qdanyKQBYXxCvblJjcq4fh4uCr7s9fiX9kCPF">
+      <TableDataSource Name="Table" Alias="Patient" DataType="System.Int32" Enabled="true" SelectCommand="SELECT * FROM A_Patient (NOLOCK) A LEFT JOIN A_Examine_Infomation (NOLOCK) B&#13;&#10;ON A.Patient_Number = B.Patient_Number&#13;&#10;WHERE Examine_Time BETWEEN CONVERT(NVARCHAR(10),GETDATE(),121) AND CONVERT(NVARCHAR(10),DATEADD(day,1,GETDATE()),121) ">
+        <Column Name="Patient_Number" DataType="System.String"/>
+        <Column Name="Serial_Number" DataType="System.Int32"/>
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="Case_Number" DataType="System.String"/>
+        <Column Name="Insurance_Number" DataType="System.String"/>
+        <Column Name="Sex" DataType="System.String"/>
+        <Column Name="Phone_Number" DataType="System.String"/>
+        <Column Name="Id_Number" DataType="System.String"/>
+        <Column Name="Age" DataType="System.Int32"/>
+        <Column Name="AgeType" DataType="System.String"/>
+        <Column Name="Contact_Address" DataType="System.String"/>
+        <Column Name="Patient_Type" DataType="System.String"/>
+        <Column Name="IsPositive" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="Ethnic" DataType="System.String"/>
+        <Column Name="Birthday" DataType="System.DateTime"/>
+        <Column Name="Stature" DataType="System.Decimal"/>
+        <Column Name="Weight" DataType="System.Decimal"/>
+        <Column Name="Examine_Time" DataType="System.DateTime"/>
+        <Column Name="Patient_Number1" DataType="System.String"/>
+        <Column Name="Apply_Department" DataType="System.String"/>
+        <Column Name="Ultrasound_Number" DataType="System.String"/>
+        <Column Name="Apply_Doctor" DataType="System.String"/>
+        <Column Name="Record_Doctor" DataType="System.String"/>
+        <Column Name="Diagnosis_Doctor" DataType="System.String"/>
+        <Column Name="Clinic_Number" DataType="System.String"/>
+        <Column Name="Hospitalized_Number" DataType="System.String"/>
+        <Column Name="Examine_Method" DataType="System.Int32"/>
+        <Column Name="Device_Number" DataType="System.String"/>
+        <Column Name="Sickbed_Number" DataType="System.String"/>
+        <Column Name="Host_Name" DataType="System.String"/>
+        <Column Name="Charge1" DataType="System.Decimal"/>
+        <Column Name="Charge2" DataType="System.Decimal"/>
+        <Column Name="Exists_Image" DataType="System.String"/>
+        <Column Name="Image_Quality" DataType="System.String"/>
+        <Column Name="Clinical_Diagnosis" DataType="System.String"/>
+        <Column Name="Patient_Source" DataType="System.String"/>
+        <Column Name="Examine_Test" DataType="System.String"/>
+        <Column Name="Examine_Part" DataType="System.String"/>
+        <Column Name="User_Defined1" DataType="System.String"/>
+        <Column Name="User_Defined2" DataType="System.String"/>
+        <Column Name="Ultrasound_Finding" DataType="System.String"/>
+        <Column Name="Ultrasound_Prompt" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Total Name="TotalGroupCount" TotalType="Count" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="TotalGroupFee" Expression="[Patient.Charge1]" Evaluator="Data1"/>
+    <Total Name="TotalCount" TotalType="Count" Evaluator="Data1" PrintOn="ReportSummary1"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="85.05">
+      <ShapeObject Name="Shape1" Left="-4.9" Top="11.6" Width="727.65" Height="37.8" Fill.Color="PowderBlue"/>
+      <TextObject Name="Text1" Top="9.45" Width="718.2" Height="47.25" Text="检查部位日业务量统计" HorzAlign="Center" VertAlign="Center" Font="宋体, 16pt, style=Bold"/>
+      <TextObject Name="Text5" Top="66.15" Width="340.2" Height="18.9" Fill.Color="LightSkyBlue" Text="检查部位" Font="宋体, 10pt"/>
+    </ReportTitleBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="88.25" Width="718.2" Condition="[Patient.Examine_Part]">
+      <DataBand Name="Data1" Top="91.45" Width="718.2" DataSource="Table"/>
+      <GroupFooterBand Name="GroupFooter1" Top="94.65" Width="718.2" Height="18.9">
+        <TextObject Name="Text3" Left="340.2" Width="189" Height="18.9" Text="检查次数：[TotalGroupCount]" Font="宋体, 9pt"/>
+        <TextObject Name="Text4" Left="529.2" Width="160.65" Height="18.9" Text="总费用：[TotalGroupFee]" Font="宋体, 9pt"/>
+        <TextObject Name="Text2" Width="340.2" Height="18.9" Text="[Patient.Examine_Part]" Font="宋体, 9pt"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="116.75" Width="718.2" Height="359.1">
+      <TextObject Name="Text14" Left="9.45" Top="340.2" Width="94.5" Height="18.9" Fill.Color="Yellow" Text="总检查人次：" Font="宋体, 9pt"/>
+      <TextObject Name="Text15" Left="85.05" Top="340.2" Width="94.5" Height="18.9" Fill.Color="Yellow" Text="[TotalCount]" Font="宋体, 9pt"/>
+      <MSChartObject Name="MSChart1" Left="160.65" Top="9.45" Width="330.75" Height="311.85" DataSource="Table" ChartData="PENoYXJ0IFNpemU9IjI4OCwgMjMyIiBCb3JkZXJsaW5lQ29sb3I9IkRhcmtHcmF5IiBCb3JkZXJsaW5lV2lkdGg9IjIiIEJvcmRlcmxpbmVEYXNoU3R5bGU9IlNvbGlkIj4NCiAgPFNlcmllcz4NCiAgICA8U2VyaWVzIE5hbWU9IlNlcmllczEiIExlZ2VuZD0iRGVmYXVsdCIgWFZhbHVlVHlwZT0iU3RyaW5nIiBZVmFsdWVUeXBlPSJEb3VibGUiIENoYXJ0VHlwZT0iUGllIiBDaGFydEFyZWE9IkRlZmF1bHQiIExhYmVsPSIjVkFMWDogI1ZBTFkiIEN1c3RvbVByb3BlcnRpZXM9IlBpZUxhYmVsU3R5bGU9T3V0c2lkZSI+DQogICAgICA8UG9pbnRzPg0KICAgICAgICA8RGF0YVBvaW50IFlWYWx1ZXM9IjMiIEF4aXNMYWJlbD0iQTEyMzQ1NiIgLz4NCiAgICAgICAgPERhdGFQb2ludCBZVmFsdWVzPSIyIiBBeGlzTGFiZWw9IkIxMjM0NTYiIC8+DQogICAgICAgIDxEYXRhUG9pbnQgWVZhbHVlcz0iNCIgQXhpc0xhYmVsPSJDMTIzNDU2IiAvPg0KICAgICAgPC9Qb2ludHM+DQogICAgPC9TZXJpZXM+DQogIDwvU2VyaWVzPg0KICA8TGVnZW5kcz4NCiAgICA8TGVnZW5kIE5hbWU9IkRlZmF1bHQiIElzRG9ja2VkSW5zaWRlQ2hhcnRBcmVhPSJGYWxzZSIgTGVnZW5kU3R5bGU9IkNvbHVtbiIgQmFja0NvbG9yPSJUcmFuc3BhcmVudCIgRG9ja2luZz0iTGVmdCI+DQogICAgPC9MZWdlbmQ+DQogIDwvTGVnZW5kcz4NCiAgPFRpdGxlcz4NCiAgICA8VGl0bGUgTmFtZT0iVGl0bGUxIiBWaXNpYmxlPSJGYWxzZSIgQWxpZ25tZW50PSJUb3BDZW50ZXIiPg0KICAgIDwvVGl0bGU+DQogIDwvVGl0bGVzPg0KICA8Q2hhcnRBcmVhcz4NCiAgICA8Q2hhcnRBcmVhIE5hbWU9IkRlZmF1bHQiPg0KICAgICAgPEF4aXNZPg0KICAgICAgICA8TWFqb3JHcmlkIExpbmVDb2xvcj0iNjQsIDY0LCA2NCwgNjQiIC8+DQogICAgICA8L0F4aXNZPg0KICAgICAgPEF4aXNYPg0KICAgICAgICA8TWFqb3JHcmlkIExpbmVDb2xvcj0iNjQsIDY0LCA2NCwgNjQiIC8+DQogICAgICA8L0F4aXNYPg0KICAgICAgPEF4aXNYMj4NCiAgICAgICAgPE1ham9yR3JpZCBMaW5lQ29sb3I9IjY0LCA2NCwgNjQsIDY0IiAvPg0KICAgICAgPC9BeGlzWDI+DQogICAgICA8QXhpc1kyPg0KICAgICAgICA8TWFqb3JHcmlkIExpbmVDb2xvcj0iNjQsIDY0LCA2NCwgNjQiIC8+DQogICAgICA8L0F4aXNZMj4NCiAgICAgIDxBcmVhM0RTdHlsZSBJc1JpZ2h0QW5nbGVBeGVzPSJGYWxzZSIgTGlnaHRTdHlsZT0iUmVhbGlzdGljIiBJbmNsaW5hdGlvbj0iNTIiIFJvdGF0aW9uPSItMjYiIFdhbGxXaWR0aD0iMjAiIC8+DQogICAgPC9DaGFydEFyZWE+DQogIDwvQ2hhcnRBcmVhcz4NCiAgPEJvcmRlclNraW4gU2tpblN0eWxlPSJFbWJvc3MiIC8+DQo8L0NoYXJ0Pg==">
+        <MSChartSeries Name="Series1" GroupBy="XValue" GroupFunction="Count" XValue="[Patient.Examine_Part]" YValue1="1"/>
+      </MSChartObject>
+    </ReportSummaryBand>
+    <PageFooterBand Name="PageFooter1" Top="479.05" Width="718.2" Height="18.9">
+      <LineObject Name="Line2" Width="727.65" Diagonal="true"/>
+      <TextObject Name="Text12" Left="652.05" Width="66.15" Height="18.9" Text="[PageN]" Font="宋体, 9pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

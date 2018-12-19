@@ -1,0 +1,11 @@
+﻿<Window x:Class="com.cloud.prospect.Register"  Background="#FFDDF0F9"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontSize="15"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="NoResize" ShowInTaskbar="False"
+        Title="注册" Height="248" Width="549" Icon="/Prospect;component/img/logo.png">
+    <Grid>
+        <TextBlock Name="tbkKey" Text="生成Key..."  Style="{StaticResource styleHyperlink}" MouseLeftButtonDown="tbkKey_MouseLeftButtonDown" Height="26" VerticalAlignment="Top"  HorizontalAlignment="Right" Width="82" Margin="0,183,12,0" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="textBlock1" Text="请录入序列号：" VerticalAlignment="Top" Width="176" />
+        <Button Content="确定" Height="33" Margin="217,176,235,0" Name="btnOk" VerticalAlignment="Top" Click="btnOk_Click" />
+        <TextBox Height="124" HorizontalAlignment="Left" Margin="12,41,0,0" Name="tbxCode" VerticalAlignment="Top" Width="503" />
+    </Grid>
+</Window>

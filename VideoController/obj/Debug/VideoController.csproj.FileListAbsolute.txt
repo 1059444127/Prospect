@@ -1,0 +1,16 @@
+D:\Project\VideoController\bin\Debug\VideoController.dll
+D:\Project\VideoController\bin\Debug\VideoController.pdb
+D:\Project\VideoController\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\VideoController\obj\Debug\VideoController.dll
+D:\Project\VideoController\obj\Debug\VideoController.pdb
+D:\Workspace\Prospect\VideoController\bin\Debug\VideoController.dll
+D:\Workspace\Prospect\VideoController\bin\Debug\VideoController.pdb
+D:\Workspace\Prospect\VideoController\obj\Debug\ResolveAssemblyReference.cache
+D:\Workspace\Prospect\VideoController\obj\Debug\VideoController.dll
+D:\Workspace\Prospect\VideoController\obj\Debug\VideoController.pdb
+D:\O\HMLD\Prospect\VideoController\bin\Debug\VideoController.dll
+D:\O\HMLD\Prospect\VideoController\bin\Debug\VideoController.pdb
+D:\O\HMLD\Prospect\VideoController\obj\Debug\VideoController.csproj.CoreCompileInputs.cache
+D:\O\HMLD\Prospect\VideoController\obj\Debug\VideoController.dll
+D:\O\HMLD\Prospect\VideoController\obj\Debug\VideoController.pdb
+D:\O\HMLD\Prospect\VideoController\obj\Debug\VideoController.csprojAssemblyReference.cache

@@ -1,0 +1,129 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="com.cloud.prospect.UpdatePatient"
+        Title="修改病例" Height="580" Width="740" FontSize="13" Background="#FFDDF0F9"
+		ResizeMode="NoResize"  ShowInTaskbar="false" Icon="/Prospect;component/img/logo.png">
+    <Grid >
+        <GroupBox Header="病人信息" Margin="6,0,12,396" Height="145" Width="700">
+            <Canvas Width="688">
+                <TextBlock  Text="姓    名" Canvas.Left="6" Canvas.Top="14" />
+                <TextBox Text="{Binding Name}" Height="23"  x:Name="textBox1" Width="160" MaxLines="1" Canvas.Left="57" Canvas.Top="11" />
+                <TextBlock  Text="病 历 号" Canvas.Left="222" Canvas.Top="14" />
+                <TextBox Text="{Binding Case_Number}" Height="23" HorizontalAlignment="Left" Margin="257,14,0,0" MaxLines="1" x:Name="textBox2" VerticalAlignment="Top" Width="174" Canvas.Left="25" Canvas.Top="-3" />
+                <TextBlock  Text="社 保 号"  Canvas.Left="469" Canvas.Top="14" />
+                <TextBox Text="{Binding Insurance_Number}" Height="23" HorizontalAlignment="Left" Margin="504,14,0,0" MaxLines="1" x:Name="textBox3" VerticalAlignment="Top" Width="152" Canvas.Left="25" Canvas.Top="-3" />
+                <TextBlock Text="性    别" Canvas.Left="6" Canvas.Top="52" />
+                <ComboBox Text="{Binding Sex}" IsEditable="True" Width="160" Canvas.Left="57" Canvas.Top="50">
+                    <ComboBoxItem Content="男"/>
+                    <ComboBoxItem Content="女"/>
+                </ComboBox>
+                <TextBlock Text="联系电话" Canvas.Left="222" Canvas.Top="52" />
+                <TextBox Text="{Binding Phone_Number}" MaxLines="1" x:Name="textBox5" Width="174" Canvas.Left="282" Canvas.Top="49" />
+                <TextBlock Text="证 件 号"  Canvas.Left="469" Canvas.Top="52" />
+                <TextBox Text="{Binding Id_Number}" MaxLines="1" x:Name="textBox6"  Canvas.Left="529" Canvas.Top="50" Width="152" />
+                <TextBlock  Text="年    龄" Canvas.Left="6" Canvas.Top="92" />
+                <TextBox Text="{Binding Age}" MaxLines="1" x:Name="textBox7"  MaxLength="3" Canvas.Left="57" Canvas.Top="87" Width="75" />
+                <ComboBox IsEditable="True" IsReadOnly="True" Text="{Binding AgeType}" Width="79" Canvas.Left="138" Canvas.Top="86">
+                	<ComboBoxItem Content="岁"/>
+                	<ComboBoxItem Content="月"/>
+                	<ComboBoxItem Content="周"/>
+                	<ComboBoxItem Content="天"/>
+                </ComboBox>
+                <TextBlock  Text="联系地址" Canvas.Left="222" Canvas.Top="92" />
+                <ComboBox Text="{Binding Contact_Address}" IsEditable="True"  Name="cbxAddress" Canvas.Left="282" Canvas.Top="87" Width="174" />
+                <TextBlock  HorizontalAlignment="Left"  Text="病人类型" Canvas.Left="469" Canvas.Top="90" />
+                <ComboBox Text="{Binding Patient_Type}" IsEditable="True" Canvas.Left="530" Canvas.Top="86" Width="152">
+                    <ComboBoxItem Content="普通" />
+                    <ComboBoxItem Content="急诊" />
+                    <ComboBoxItem Content="军人" />
+                    <ComboBoxItem Content="VIP" />
+                </ComboBox>
+            </Canvas>
+        </GroupBox>
+        <GroupBox Header="检查信息" Margin="6,145,12,66" x:Name="gbxExaminInfo" Width="700" Height="320">
+            <Canvas>
+                <TextBlock Text="申请科室" Canvas.Left="5" Canvas.Top="13" />
+                <ComboBox Name="cbxDepartment" Text="{Binding Apply_Department}" IsEditable="True" Canvas.Left="61" Canvas.Top="10" Width="157" SelectionChanged="cbxDepartment_SelectionChanged" />
+                <TextBlock Text="超 声 号"  Canvas.Left="227" Canvas.Top="13" />
+                <TextBox Text="{Binding Ultrasound_Number}" MaxLines="1" Width="175" Canvas.Left="282" Canvas.Top="10" />
+                <TextBlock Text="自定义一" Canvas.Left="469" Canvas.Top="13" />
+                <ComboBox Name="cbxUserDef1" Text="{Binding User_Defined1}"  IsEditable="True" Width="152" Canvas.Left="530" Canvas.Top="7" />
+                <TextBlock Text="申请医师" Canvas.Left="5" Canvas.Top="51" />
+                <ComboBox Name="cbxApplyDoctor" Text="{Binding Apply_Doctor}"  IsEditable="True" Width="157" Canvas.Left="61" Canvas.Top="48" />
+                <TextBlock Text="门 诊 号"  Width="55" Canvas.Left="227" Canvas.Top="51" />
+                <TextBox Text="{Binding Clinic_Number}" MaxLines="1" Width="175" Canvas.Left="282" Canvas.Top="48" />
+                <TextBlock Text="自定义二" Canvas.Left="469" Canvas.Top="48" />
+                <ComboBox Name="cbxUserDef2" Text="{Binding User_Defined2}" IsEditable="True" Width="152" Canvas.Left="530" Canvas.Top="45" />
+                <TextBlock Text="住 院 号"  Width="55" Canvas.Left="6" Canvas.Top="87" />
+                <TextBox Text="{Binding Hospitalized_Number}"  MaxLines="1" Width="157" Canvas.Left="61" Canvas.Top="84" />
+                <TextBlock Text="检查方法" Canvas.Left="227" Canvas.Top="87" />
+                <ComboBox x:Name="cbxMethod" Text="{Binding Examine_Method}" IsEditable="True" Canvas.Left="282" Canvas.Top="84" Width="174" />
+                <TextBlock Text="设备型号" Canvas.Left="469" Canvas.Top="84" />
+                <ComboBox Name="cbxDevice" Text="{Binding Device_Number}" IsEditable="True"  Width="152" Canvas.Left="530" Canvas.Top="81" />
+                <TextBlock Text="病 床 号" Canvas.Left="6" Canvas.Top="122" Height="17" />
+                <TextBox Text="{Binding Sickbed_Number}"  Height="23"  MaxLines="1"  Width="156" Canvas.Left="61" Canvas.Top="119" />
+                <TextBlock Text="检查时间" Canvas.Left="227" Canvas.Top="122" />
+                <xctk:DateTimePicker FontSize="12" Value="{Binding Examine_Time}" Width="175" TimeFormat="Custom" TimeFormatString="yyyy-MM-dd HH:mm:ss"  Canvas.Left="282" Canvas.Top="119" />
+                <TextBlock Text="主机名称" Canvas.Left="469" Canvas.Top="119" />
+                <ComboBox Text="{Binding Host_Name}" Canvas.Left="530" Canvas.Top="116" Width="152" IsEditable="True" />
+                <TextBlock Text="收费额度" Width="55" Canvas.Left="5" Canvas.Top="157" />
+                <TextBox Text="{Binding Charge1}" MaxLines="1" x:Name="textBox16"   Width="73" Canvas.Left="61" Canvas.Top="156" />
+                <TextBox Text="{Binding Charge2}" MaxLines="1" x:Name="textBox17" Width="73" Canvas.Left="144" Canvas.Top="155" />
+                <TextBlock Text="影像文件" Width="55" Canvas.Left="227" Canvas.Top="156" />
+                <ComboBox Text="{Binding Exists_Image}" IsEditable="True"  Width="174" Canvas.Left="282" Canvas.Top="152">
+                	<ComboBoxItem Content="有"/>
+                	<ComboBoxItem Content="无"/>
+                </ComboBox>
+                <TextBlock Text="影像质量" Canvas.Left="469" Canvas.Top="155" />
+                <ComboBox Text="{Binding Image_Quality}"  IsEditable="True"  Width="152" Canvas.Left="530" Canvas.Top="151">
+                	<ComboBoxItem Content="一般"/>
+                	<ComboBoxItem Content="较好"/>
+                	<ComboBoxItem Content="较差"/>
+                </ComboBox>
+                <TextBlock Text="临床诊断" Canvas.Left="5" Canvas.Top="191" />
+                <ComboBox Name="cbxDiagnosis" Text="{Binding Clinical_Diagnosis}"  IsEditable="True" Width="395" Canvas.Left="62" Canvas.Top="185" />
+                <TextBlock Text="病人来源" Canvas.Left="469" Canvas.Top="191" />
+                <ComboBox Text="{Binding Patient_Source}" IsEditable="True" Width="152" Canvas.Left="530" Canvas.Top="185">
+                	<ComboBoxItem Content="门诊"/>
+                	<ComboBoxItem Content="住院"/>
+                	<ComboBoxItem Content="体检"/>
+                	<ComboBoxItem Content="外来"/>
+                </ComboBox>
+                <TextBlock Text="检查项目" Canvas.Left="5" Canvas.Top="229" />
+                <TextBox Text="{Binding Examine_Test}" MaxLines="1" x:Name="textBox14" Width="621" Canvas.Left="61" Canvas.Top="226" />
+                <TextBlock Text="检查部位" Canvas.Left="5" Canvas.Top="270" />
+                <TextBox Text="{Binding Examine_Part}" MaxLines="1" Width="621" Canvas.Left="61" Canvas.Top="267" />
+            </Canvas>
+        </GroupBox>
+        <Button Height="40" HorizontalAlignment="Left" Margin="156,489,0,0" x:Name="btnUpdate" VerticalAlignment="Top" Width="115" Click="btnUpdate_Click" >
+        	<Button.Background>
+        		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+        			<GradientStop Color="#FFC9EAF5" Offset="0.1"/>
+        			<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+        			<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+        			<GradientStop Color="#FF71B1C6" Offset="1"/>
+        		</LinearGradientBrush>
+        	</Button.Background>
+            	<Grid>
+            		<Image Source="/Prospect;component/img/save2.png" Margin="-10,0,61,0" />
+					<TextBlock Margin="39,6,0,8"><Run Text="修改并关闭"/></TextBlock>        	
+				</Grid>
+        	</Button>
+        <Button x:Name="btnClose" Width="99" Margin="0,489,167,23" HorizontalAlignment="Right" Click="btnClose_Click" >
+        	<Button.Background>
+        		<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+        			<GradientStop Color="#FFC9EAF5" Offset="0.1"/>
+        			<GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+        			<GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+        			<GradientStop Color="#FF71B1C6" Offset="1"/>
+        		</LinearGradientBrush>
+        	</Button.Background>
+            	<Grid>
+            		<Image Source="/Prospect;component/img/close2.png" Margin="-4,0,49,0" d:LayoutOverrides="VerticalAlignment" />
+					<TextBlock Margin="34,8,5,6"><Run Text="关闭"/></TextBlock>        	
+				</Grid>
+			</Button>
+    </Grid>
+</Window>

@@ -1,0 +1,8 @@
+﻿<Window x:Class="com.cloud.prospect.Startup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" ResizeMode="NoResize"  WindowStyle="None"
+        Title="Startup" Height="400" Width="600" Loaded="Window_Loaded">
+    <Window.Background>
+        <ImageBrush ImageSource="/Prospect;component/img/startup.jpg" />
+    </Window.Background>
+</Window>

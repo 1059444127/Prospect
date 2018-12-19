@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="01/01/2014 11:37:12" ReportInfo.Modified="01/02/2014 16:56:16" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqM3/HbiZANEYP3Y6oNtE7mrUmT0ytl94C6DYS4DXvgc8JqhVjVQGe7Sc2pOMNI3eDscIcPzTJJXajkgPF9rasF/JuQc+4vn0OzYPvLvzYnTRbKVeAOjY0pELgguGXTLH0V+0/bRfr013PVrvkPNdyGJ2oXK0qdanyKQBYXxCvblK79YSVIsTh/xB/KnKbMRkc">
+      <TableDataSource Name="Table" Alias="Patient" DataType="System.Int32" Enabled="true" SelectCommand="SELECT 1 AS Cnt,Charge1,Name,Sex,Apply_Department,Examine_Part,Examine_Time,Diagnosis_Doctor,Apply_Doctor,Clinical_Diagnosis FROM A_Patient (NOLOCK) A LEFT JOIN A_Examine_Infomation (NOLOCK) B&#13;&#10;ON A.Patient_Number = B.Patient_Number&#13;&#10;WHERE Examine_Time BETWEEN CONVERT(NVARCHAR(10),GETDATE(),121) AND CONVERT(NVARCHAR(10),DATEADD(day,1,GETDATE()),121) ">
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="Sex" DataType="System.String"/>
+        <Column Name="Apply_Department" DataType="System.String"/>
+        <Column Name="Examine_Part" DataType="System.String"/>
+        <Column Name="Examine_Time" DataType="System.DateTime"/>
+        <Column Name="Diagnosis_Doctor" DataType="System.String"/>
+        <Column Name="Cnt" DataType="System.Int32"/>
+        <Column Name="Charge1" DataType="System.Decimal"/>
+        <Column Name="Apply_Doctor" DataType="System.String"/>
+        <Column Name="Clinical_Diagnosis" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Total Name="TotalGroup" TotalType="Count" Evaluator="Data1" PrintOn="GroupFooter1"/>
+    <Total Name="TotalFee" Expression="[Patient.Charge1]" Evaluator="Data1" PrintOn="GroupFooter1"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="113.4">
+      <ShapeObject Name="Shape1" Left="-4.9" Top="11.6" Width="727.65" Height="37.8" Fill.Color="PowderBlue"/>
+      <TextObject Name="Text1" Top="9.45" Width="718.2" Height="47.25" Text="申请医生月总收入总人数统计" HorzAlign="Center" VertAlign="Center" Font="宋体, 16pt, style=Bold"/>
+    </ReportTitleBand>
+    <GroupHeaderBand Name="GroupHeader1" Top="116.6" Width="718.2" Height="37.8" Condition="[Patient.Apply_Doctor]">
+      <TextObject Name="Text5" Top="18.9" Width="85.05" Height="18.9" Fill.Color="LightSkyBlue" Text="患者姓名" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text16" Left="85.05" Top="18.9" Width="37.8" Height="18.9" Fill.Color="LightSkyBlue" Text="性别" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text17" Left="122.85" Top="18.9" Width="103.95" Height="18.9" Fill.Color="LightSkyBlue" Text="申请科室" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text18" Left="226.8" Top="18.9" Width="236.25" Height="18.9" Fill.Color="LightSkyBlue" Text="检查部位" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text19" Left="463.05" Top="18.9" Width="179.55" Height="18.9" Fill.Color="LightSkyBlue" Text="临床诊断" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text20" Left="642.6" Top="18.9" Width="75.6" Height="18.9" Fill.Color="LightSkyBlue" Text="检查费用" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Width="368.55" Height="18.9" Text="申请医生：[Patient.Apply_Doctor]" Font="宋体, 10pt, style=Bold"/>
+      <DataBand Name="Data1" Top="157.6" Width="718.2" Height="18.9" DataSource="Table">
+        <TextObject Name="Text2" Width="85.05" Height="18.9" Text="[Patient.Name]" Font="宋体, 9pt"/>
+        <TextObject Name="Text3" Left="85.05" Width="37.8" Height="18.9" Text="[Patient.Sex]" Font="宋体, 9pt"/>
+        <TextObject Name="Text4" Left="122.85" Width="103.95" Height="18.9" Text="[Patient.Apply_Department]" Font="宋体, 9pt"/>
+        <TextObject Name="Text6" Left="226.8" Width="236.25" Height="18.9" Text="[Patient.Examine_Part]" Font="宋体, 9pt"/>
+        <TextObject Name="Text7" Left="463.05" Width="179.55" Height="18.9" Text="[Patient.Clinical_Diagnosis]" Font="宋体, 9pt"/>
+        <TextObject Name="Text8" Left="642.6" Width="75.6" Height="18.9" Text="[Patient.Charge1]" Format="Currency" Format.UseLocale="true" HorzAlign="Right" WordWrap="false" Font="宋体, 9pt" Trimming="EllipsisCharacter"/>
+      </DataBand>
+      <GroupFooterBand Name="GroupFooter1" Top="179.7" Width="718.2" Height="37.8">
+        <TextObject Name="Text14" Width="718.2" Height="18.9" Fill.Color="Gainsboro" Text="合计数：[TotalGroup]人次/合计：￥[TotalFee]元" Font="宋体, 9pt"/>
+      </GroupFooterBand>
+    </GroupHeaderBand>
+    <PageFooterBand Name="PageFooter1" Top="220.7" Width="718.2" Height="18.9">
+      <LineObject Name="Line2" Width="727.65" Diagonal="true"/>
+      <TextObject Name="Text12" Left="623.7" Width="94.5" Height="18.9" Text="[PageN]" Font="宋体, 9pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,296 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:com.cloud.prospect"
+        mc:Ignorable="d"
+        x:Class="com.cloud.prospect.ProspectWin"
+	    x:Name="Window"
+	    Title="北京华明雷德科技有限责任公司" TextOptions.TextFormattingMode="Display" SnapsToDevicePixels="True"
+	    Width="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenWidthKey}}" 
+	    Height="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenHeightKey}}" 
+	    WindowStartupLocation="CenterScreen" 
+	    WindowStyle="None" Loaded="Window_Loaded" Closing="Window_Closing" Icon="/Prospect;component/img/logo.png">
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:UserCommands.DeleteImage}"
+                        Executed="item_Click" ></CommandBinding>
+    </Window.CommandBindings>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition x:Name="ControlHeight" Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="topGrid" Grid.Row="0">
+            <Rectangle Height="63" VerticalAlignment="Top" >
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF628FB2"/>
+                        <GradientStop Color="#FFD6E7F9" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+                </Rectangle.Stroke>
+            </Rectangle>
+            <Button HorizontalAlignment="Left" 
+					VerticalAlignment="Top" 
+					Height="50" 
+			        Width="65" 
+					Margin="8,8,0,0" 
+					Style="{StaticResource ToolButtonStyle}" x:Name="btnSearch" Click="btnSearch_Click" ToolTip="设置条件搜索病人病例">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/search.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12">查找病例</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button VerticalAlignment="Top" 
+        	Height="50" Width="65" Margin="75.25,7.75,0,0" 
+        	Style="{StaticResource ToolButtonStyle}" x:Name="btnNewPatient" Click="btnNewPatient_Click" ToolTip="新增一个病人病例" HorizontalAlignment="Left">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/patient.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="新增病例"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Left" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="65" 
+        	Margin="142,8,0,0" 
+        	Style="{StaticResource ToolButtonStyle}" x:Name="btnSave" Click="btnSave_Click" ToolTip="保存当前病例信息">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/save.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="保存信息"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button VerticalAlignment="Top" 
+        	Height="50" Margin="209.25,7.75,0,0" 
+        	Style="{StaticResource ToolButtonStyle}" x:Name="Update" Click="Update_Click" ToolTip="编辑当前病例信息" HorizontalAlignment="Left">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/editor.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="编辑信息"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Left" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="65" 
+        	Margin="267.25,8,0,0" 
+        	Style="{StaticResource ToolButtonStyle}" x:Name="btnDelete" Click="btnDelete_Click" ToolTip="删除当前病例所有信息" >
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/delete.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="删除病例"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Left" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="65" 
+        	Margin="334.5,8,0,0" 
+        	Style="{StaticResource ToolButtonStyle}" ToolTip="调取数据库中的诊断模板" x:Name="btnReportTemplate" Click="btnReportTemplate_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/reporttemplate.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="报告模板"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Left" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="65" ToolTip="打印当前病例图文报告"
+        	Margin="402,7.75,0,0" Name="btnPrintReport" Click="btnPrintReport_Click"    
+        	Style="{StaticResource ToolButtonStyle}">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/printer.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="打印报告"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Left" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="45" 
+        	Margin="467,8,0,0" ToolTip="定位数据库中首位病例信息"
+        	Style="{StaticResource ToolButtonStyle}" Name="btnFirstPatient" Click="btnFirstPatient_Click" >
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/first.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="首  例"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Left" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="45" 
+        	Margin="510.75,8,0,0" ToolTip="定位数据库中上一位病例信息"
+        	Style="{StaticResource ToolButtonStyle}" Name="btnLastRecord" Click="btnLastRecord_Click" >
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/previous.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="上一例"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Left" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="45" 
+        	Margin="556,9,0,0"  ToolTip="定位数据库中下一位病例信息"
+        	Style="{StaticResource ToolButtonStyle}" Name="btnNextRecord" Click="btnNextRecord_Click" >
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/next.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="下一例"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+			HorizontalAlignment="Left" 
+			VerticalAlignment="Top" 
+			Height="50" 
+			Width="45" 
+			Margin="601,8,0,0"  ToolTip="定位数据库中末位病例信息"
+			Style="{StaticResource ToolButtonStyle}" Name="btnLatestRecord" Click="btnLatestRecord_Click">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/end.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="末  例"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+			HorizontalAlignment="Left" 
+			VerticalAlignment="Top" 
+			Height="50" 
+			Width="65" 
+			Margin="650,8,0,0"  ToolTip="显示综合统计信息" Name="btnStatic" Click="btnStatic_Click"
+			Style="{StaticResource ToolButtonStyle}">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/stats.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="综合统计"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Left" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Margin="715,8,60.498,0"  ToolTip="写当前病人信息时，可以采集下一位病人的图像"
+        	Style="{StaticResource ToolButtonStyle}" Name="btnMultipleThread" Click="btnMultipleThread_Click" >
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/thread.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="多 线 程"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Right" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="45" 
+        	Margin="0,8,107,0" Click="btnReturn_Click"   Visibility="Hidden" x:Name="btnReturn"
+        	Style="{StaticResource ToolButtonStyle}" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="/Prospect;component/img/return.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="返  回"/></TextBlock>
+                </StackPanel>
+            </Button>
+			 <Button 
+        	HorizontalAlignment="Right" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="45" 
+        	Margin="0,8,57,0" Click="btnMinimize_Click"
+        	Style="{StaticResource ToolButtonStyle}" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/minus.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="最小化"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Left" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="45" 
+        	Margin="775,8,0,0" Click="btnHelp_Click" Name="btnHelp"
+        	Style="{StaticResource ToolButtonStyle}" d:LayoutOverrides="GridBox">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/help.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="帮  助"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button 
+        	HorizontalAlignment="Right" 
+        	VerticalAlignment="Top" 
+        	Height="50" 
+        	Width="45" 
+        	Margin="0,8,8,0" Click="btnQuit_Click"
+        	Style="{StaticResource ToolButtonStyle}" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                    <Image Width="50" Height="28" Source="img/close.png" />
+                    <TextBlock VerticalAlignment="Center" FontSize="12"><Run Text="退  出"/></TextBlock>
+                </StackPanel>
+            </Button>
+
+        </Grid>
+        <Grid Grid.Row="1" Background="#FFDDF0F9" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <ContentControl Grid.Column="0" Name="tc" VerticalAlignment="Top"  />
+            <ScrollViewer x:Name="scrolls2" Grid.Column="1"  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
+                <ScrollViewer.Content>
+                    <ListBox  x:Name="stkImage2" IsEnabled="False" Background="#FFD8F9EB"  >
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Vertical" IsItemsHost="True" >
+
+                                </WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                    </ListBox>
+                </ScrollViewer.Content>
+            </ScrollViewer>
+        </Grid>
+        <ScrollViewer VerticalAlignment="Bottom" x:Name="scrolls"  Grid.Row="2" Height="100"  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
+            <ScrollViewer.ContextMenu>
+                <ContextMenu Name="cm" Loaded="cm_Loaded">
+                    <MenuItem Header="粘贴" Name="muiPaste" Click="muiPaste_Click" />
+                </ContextMenu>
+            </ScrollViewer.ContextMenu>
+            <ScrollViewer.Content>
+                <ListBox  x:Name="stkImage" SelectionMode="Extended" Background="#FFD8F9EB" >
+                    <ListBox.Resources>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <Border Name="Border" Padding="1" SnapsToDevicePixels="true">
+                                            <ContentPresenter />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="true">
+                                                <Setter TargetName="Border" Property="Background"
+                                                        Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}">Red</SolidColorBrush>
+
+                    </ListBox.Resources>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" IsItemsHost="True" >
+
+                            </WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+
+            </ScrollViewer.Content>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87C3AF68-A0B3-4100-B8D0-C9D81F0D8691}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.cloud.prospect</RootNamespace>
+    <AssemblyName>Prospect</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>prospect.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>com.cloud.prospect.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ProspectReport">
+      <HintPath>..\Included DLL\ProspectReport.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit">
+      <HintPath>..\Included DLL\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\Included DLL\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DAL\Address.cs" />
+    <Compile Include="DAL\Department.cs" />
+    <Compile Include="DAL\Diagnosis.cs" />
+    <Compile Include="DAL\Doctor.cs" />
+    <Compile Include="DAL\LastLogon.cs" />
+    <Compile Include="DAL\MedicalDevice.cs" />
+    <Compile Include="DAL\ExamineMethod.cs" />
+    <Compile Include="DAL\ImageColor.cs" />
+    <Compile Include="DAL\MainTemplate.cs" />
+    <Compile Include="DAL\Parameter.cs" />
+    <Compile Include="DAL\Search.cs" />
+    <Compile Include="DAL\BodyArea.cs" />
+    <Compile Include="DAL\DALBase.cs" />
+    <Compile Include="DAL\ExamineInformation.cs" />
+    <Compile Include="DAL\PatientImage.cs" />
+    <Compile Include="DAL\Patient.cs" />
+    <Compile Include="DAL\DALModel.cs" />
+    <Compile Include="DAL\SelectedFields.cs" />
+    <Compile Include="DAL\SimpleTemplate.cs" />
+    <Compile Include="DAL\StatisticReport.cs" />
+    <Compile Include="DAL\UserDefine1.cs" />
+    <Compile Include="DAL\UserDefine2.cs" />
+    <Compile Include="Database\Database.cs" />
+    <Compile Include="Database\DatabaseFactory.cs" />
+    <Compile Include="Database\DatabaseUtil.cs" />
+    <Compile Include="Database\SQLServer.cs" />
+    <Compile Include="General\Clipboard.cs" />
+    <Compile Include="General\FTPUtil.cs" />
+    <Compile Include="General\Information.cs" />
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\Doctor.cs" />
+    <Compile Include="Model\LastLogon.cs" />
+    <Compile Include="Model\Paramter.cs" />
+    <Compile Include="Model\UserDefine2.cs" />
+    <Compile Include="Model\Diagnosis.cs" />
+    <Compile Include="Model\MedicalDevice.cs" />
+    <Compile Include="Model\UserDefine1.cs" />
+    <Compile Include="General\EmbeddedAssembly.cs" />
+    <Compile Include="General\ErrorHandle.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\ExamineMethod.cs" />
+    <Compile Include="Model\ImageColor.cs" />
+    <Compile Include="Model\Search.cs" />
+    <Compile Include="Model\BodyArea.cs" />
+    <Compile Include="Model\ExamineInformation.cs" />
+    <Compile Include="Model\PatientImage.cs" />
+    <Compile Include="Model\Patient.cs" />
+    <Compile Include="Model\SelectedFields.cs" />
+    <Compile Include="Model\SimpleTemplate.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="General\SimpleStlyesResourceDic.cs" />
+    <Compile Include="Commands\UserCommands.cs" />
+    <Compile Include="General\Config.cs" />
+    <Compile Include="UI\UtilFunctions.cs" />
+    <Compile Include="Model\Logger\Logger.cs" />
+    <Compile Include="Service References\FtpWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\KeyNumber.xaml.cs">
+      <DependentUpon>KeyNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ServerSettingWindow.xaml.cs">
+      <DependentUpon>ServerSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StatisticWindow.xaml.cs">
+      <DependentUpon>StatisticWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ReportControl.Designer.cs">
+      <DependentUpon>ReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Startup.xaml.cs">
+      <DependentUpon>Startup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PatientImageUC.cs" />
+    <Compile Include="Model\MainTemplate.cs" />
+    <Compile Include="ViewModel\ImageColorViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SimpleTemplateViewModel.cs" />
+    <Compile Include="UI\AddPatient.xaml.cs">
+      <DependentUpon>AddPatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CardSettingWindow.xaml.cs">
+      <DependentUpon>CardSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ColorTemplateName.xaml.cs">
+      <DependentUpon>ColorTemplateName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DiagnoseTemplate.xaml.cs">
+      <DependentUpon>DiagnoseTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FieldItems.xaml.cs">
+      <DependentUpon>FieldItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Logon.xaml.cs">
+      <DependentUpon>Logon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OptionSettingWindow.xaml.cs">
+      <DependentUpon>OptionSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SimpleTemplate2.xaml.cs">
+      <DependentUpon>SimpleTemplate2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SimpleTemplate1.xaml.cs">
+      <DependentUpon>SimpleTemplate1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SystemSetting.xaml.cs">
+      <DependentUpon>SystemSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCSearch.xaml.cs">
+      <DependentUpon>UCSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UpdatePatient.xaml.cs">
+      <DependentUpon>UpdatePatient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImageProcessWindow.xaml.cs">
+      <DependentUpon>ImageProcessWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCMain.xaml.cs">
+      <DependentUpon>UCMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="General\VideoControlHost.cs" />
+    <Compile Include="ViewModel\VMR9ViewModel.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="UI\AddPatient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\CardSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ColorTemplateName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\HelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\KeyNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ServerSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\StatisticWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\DiagnoseTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\FieldItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Logon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\OptionSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SimpleTemplate2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SimpleTemplate1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Startup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SystemSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\UCSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\UpdatePatient.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\ImageProcessWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\UCMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Service References\FtpWebService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\FtpWebService\configuration.svcinfo" />
+    <None Include="Service References\FtpWebService\configuration91.svcinfo" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReportControl.resx">
+      <DependentUpon>ReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="img\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Data" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\FtpWebService\WsPacsTrans.wsdl" />
+    <Resource Include="img\logon.jpg" />
+    <Resource Include="img\help.png" />
+    <Content Include="Reports\16K\标准样式16K-两图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\16K\标准样式16K-两图颅脑.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\16K\标准样式16K-四图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\16K\标准样式16K-文字.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\16K\标准样式16K-心脏.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\16K\标准样式16K-一图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\A4\标准样式A4-二图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\A4\标准样式A4-两图颅脑.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\A4\标准样式A4-三图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\A4\标准样式A4-四图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\A4\标准样式A4-文字.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\A4\标准样式A4-心脏.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\A4\标准样式A4-一图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\B5\标准样式B5-两图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\B5\标准样式B5-两图颅脑.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\B5\标准样式B5-四图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\B5\标准样式B5-文字.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\B5\标准样式B5-心脏.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\B5\标准样式B5-一图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\其他\标准样式16K-文字.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\其他\标准样式16K-一图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\其他\标准样式A4-二图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\其他\标准样式A4-文字.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\其他\标准样式A4-一图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\其他\标准样式B5-两图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\其他\标准样式B5-文字.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\其他\标准样式B5-一图.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\统计\本科室日业务量统计.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\统计\检查部位日业务量统计.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\统计\申请医生业务量统计-New.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\统计\申请医生业务量统计.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\统计\申请医生月总收入总人数统计.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\统计\所有科室月总收入总人数.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\统计\诊断医生业务量统计.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\统计\诊断医生月总收入总人数统计.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\shear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.ApplicationBlocks.Data\Microsoft.ApplicationBlocks.Data.csproj">
+      <Project>{30933672-466E-4F67-A111-ABF267539146}</Project>
+      <Name>Microsoft.ApplicationBlocks.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RisCaptureLib\RisCaptureLib.csproj">
+      <Project>{DE79C6AB-B5A9-4BAF-80FA-22835452785F}</Project>
+      <Name>RisCaptureLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoController\VideoController.csproj">
+      <Project>{97108BDE-6E62-4FA0-8707-645594D592E8}</Project>
+      <Name>VideoController</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\minus.png" />
+    <Resource Include="img\next.png" />
+    <Resource Include="img\patient.png" />
+    <Resource Include="img\first.png" />
+    <Resource Include="img\end.png" />
+    <Resource Include="img\previous.png" />
+    <Resource Include="img\printer.png" />
+    <Resource Include="img\delete.png" />
+    <Resource Include="img\save.png" />
+    <Resource Include="img\editor.png" />
+    <Resource Include="img\reporttemplate.png" />
+    <Resource Include="img\search.png" />
+    <Resource Include="img\close.png" />
+    <Resource Include="img\Stats.png" />
+    <Resource Include="img\thread.png" />
+    <Resource Include="img\opentemplate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\downarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\uparrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\caputreimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\stoprecord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\frozen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\save2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\addfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\save3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\node.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\noimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="prospect.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\enhancement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\sharpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\defaut.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\leftarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\rightarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\blueround.png" />
+    <Resource Include="img\greenround.png" />
+    <Resource Include="img\redround.png" />
+    <Resource Include="img\yellowround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\logon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\startup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\FtpWebService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

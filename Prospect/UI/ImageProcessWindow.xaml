@@ -1,0 +1,221 @@
+﻿<Window x:Class="com.cloud.prospect.ImageProcessWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:local="clr-namespace:com.cloud.prospect"
+        Title="ImageProcessWindow" Width="930"  Background="#FFDDF0F9" ResizeMode="NoResize" ShowInTaskbar="False" 
+        Closing="Window_Closing" mc:Ignorable="d"
+        d:DesignHeight="747" SizeToContent="Height" Icon="/Prospect;component/img/logo.png">
+    
+    <Grid Height="645">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="Auto"/>
+            <ColumnDefinition  Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer  Background="Black" PreviewMouseWheel="InkCanvas_PreviewMouseWheel" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"  Width="756" Height="582" x:Name="srvImage" >
+            <Image x:Name="imgMain" Stretch="Fill" OpacityMask="#FF4D7BA2" MouseLeftButtonDown="imgMain_MouseLeftButtonDown"></Image>
+        </ScrollViewer>
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <UniformGrid Rows="2" Columns="2" Grid.Row="0">
+                <Border Height="80" Width="80" BorderThickness="0">
+                    <Button  Height="50" Width="50" Name="btnEnchance" Click="btnEnchance_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC9EAF5" Offset="0.1"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FF71B1C6" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Grid Height="47">
+                            <Image  Margin="6,0,4,20" Source="/Prospect;component/img/enhancement.png" />
+                            <TextBlock Margin="8,28,6,0"><Run Text="增强"/></TextBlock>
+                        </Grid>
+                    </Button>
+                </Border>
+                <Border Height="80" Width="80" BorderThickness="0">
+                    <Button  Height="50" Width="50" Name="btnSharpen"  Click="btnSharpen_Click" >
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC9EAF5" Offset="0.1"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FF71B1C6" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Grid Height="47">
+                            <Image  Margin="6,0,4,20" Source="/Prospect;component/img/sharpen.png" />
+                            <TextBlock Margin="8,28,6,0"><Run Text="锐化"/></TextBlock>
+                        </Grid>
+                    </Button>
+                </Border>
+                <Border Height="80" Width="80" BorderThickness="0">
+                    <Button  Height="50" Width="50" Name="btnCancel" Click="btnCancel_Click" >
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC9EAF5" Offset="0.1"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FF71B1C6" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Grid Height="47">
+                            <Image  Margin="6,0,4,20" Source="/Prospect;component/img/back.png" />
+                            <TextBlock Margin="8,28,6,0"><Run Text="撤销"/></TextBlock>
+                        </Grid>
+                    </Button>
+                </Border>
+                <Border Height="80" Width="80" BorderThickness="0">
+                    <Button  Height="50" Width="50" Name="btnSave" Click="btnSave_Click" >
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC9EAF5" Offset="0.1"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FF71B1C6" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Grid Height="47">
+                            <Image  Margin="6,0,4,20" Source="/Prospect;component/img/save3.png" />
+                            <TextBlock Margin="8,28,6,0"><Run Text="保存"/></TextBlock>
+                        </Grid>
+                    </Button>
+                </Border>
+            </UniformGrid>
+            <UniformGrid Rows="3" Columns="1" Grid.Row="1">
+                
+                <StackPanel Height="50">
+                    <TextBlock Width="145">红</TextBlock>
+                    <Slider Value="{Binding Red}" TickFrequency="1" IsSnapToTickEnabled="True" Grid.Row="1" x:Name="sldRed" Maximum="80" Minimum="-80"  Width="150" ValueChanged="sldRed_ValueChanged" />
+                </StackPanel>
+                <StackPanel  Height="50">
+                    <TextBlock Width="145">绿</TextBlock>
+                    <Slider Value="{Binding Green}" TickFrequency="1" IsSnapToTickEnabled="True" Grid.Row="1" x:Name="sldGreen" Maximum="80" Minimum="-80"  Width="150" ValueChanged="sldGreen_ValueChanged" />
+                </StackPanel>
+                <StackPanel  Height="50">
+                    <TextBlock Width="145">蓝</TextBlock>
+                    <Slider Value="{Binding Blue}" TickFrequency="1" IsSnapToTickEnabled="True" Grid.Row="1" x:Name="sldBlue" Maximum="80" Minimum="-80"  Width="150" ValueChanged="sldBlue_ValueChanged"  />
+                </StackPanel>
+            </UniformGrid>
+            <UniformGrid Columns="2" Rows="1" Grid.Row="2">
+                <Border Height="40">
+                    <Button  Height="20" Width="70" Name="btnColorDefaut" Click="btnColorDefaut_Click" >
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC9EAF5" Offset="0.1"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FF71B1C6" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Grid>
+                            <Image  Margin="6,0,36,0" Source="/Prospect;component/img/defaut.ico" />
+                            <TextBlock Margin="34,0,0,0"><Run Text="默认"/></TextBlock>
+                        </Grid>
+                    </Button>
+                </Border>
+                <Border Height="40">
+                    <Button  Height="20" Width="70" Name="btnColorSave" Click="btnColorSave_Click" >
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                <GradientStop Color="#FFC9EAF5" Offset="0.1"/>
+                                <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                                <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                                <GradientStop Color="#FF71B1C6" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Grid>
+                            <Image  Margin="6,0,36,0" Source="/Prospect;component/img/save2.png" />
+                            <TextBlock Margin="34,0,0,0"><Run Text="保存"/></TextBlock>
+                        </Grid>
+                    </Button>
+                </Border>
+            </UniformGrid>
+            <Grid Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock Height="20" Width="130" Margin="6,10,16,0">预设伪彩模板</TextBlock>
+                <Border Grid.Row="1" Width="140">
+                    <ListBox Name="lbxColor" SelectionMode="Single" SelectionChanged="lbxColor_SelectionChanged" >
+                        <ListBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="删除" Click="item_Click" />
+                                <Separator />
+                                <MenuItem Header="修改名称" Click="item2_Click" />
+                            </ContextMenu>
+                        </ListBox.ContextMenu>
+                    </ListBox>
+                </Border>
+            </Grid>
+        </Grid>
+        <Button  Grid.Row="1" Height="44" HorizontalAlignment="Left" Margin="31,7,0,0" Name="btnShear" VerticalAlignment="Top" Width="75" Click="btnShear_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFC9EAF5" Offset="0.1"/>
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
+                    <GradientStop Color="#FF71B1C6" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Grid>
+                <Image  Margin="6,0,36,0" Source="/Prospect;component/img/shear.png" />
+                <TextBlock Margin="39,8,0,7"><Run Text="剪切"/></TextBlock>
+            </Grid>
+        </Button>
+        <Button Height="44" HorizontalAlignment="Left" Margin="253,7,0,0" Name="btnPreviousImage" VerticalAlignment="Top" Width="87" Grid.Row="1" Click="btnPreviousImage_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFC9EAF5" Offset="0.1" />
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5" />
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5" />
+                    <GradientStop Color="#FF71B1C6" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Grid>
+                <Image Margin="6,0,45,-3" Source="/Prospect;component/img/leftarrow.png" />
+                <TextBlock Margin="38,8,0,7"><Run Text="上一幅" /></TextBlock>
+            </Grid>
+        </Button>
+        <Button Height="44" HorizontalAlignment="Left" Margin="364,7,0,0" Name="btnNextImage" VerticalAlignment="Top" Width="87" Grid.Row="1" Click="btnNextImage_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFC9EAF5" Offset="0.1" />
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5" />
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5" />
+                    <GradientStop Color="#FF71B1C6" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Grid>
+                <Image Margin="6,0,45,-3" Source="/Prospect;component/img/rightarrow.png" />
+                <TextBlock Margin="38,8,0,7"><Run Text="下一幅" /></TextBlock>
+            </Grid>
+        </Button>
+        <Button Height="44" HorizontalAlignment="Left" Margin="44,7,0,0"  VerticalAlignment="Top" Width="75" Grid.Column="1" Grid.Row="1" Name="btnClose" Click="btnClose_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFC9EAF5" Offset="0.1" />
+                    <GradientStop Color="#FFEBEBEB" Offset="0.5" />
+                    <GradientStop Color="#FFDDDDDD" Offset="0.5" />
+                    <GradientStop Color="#FF71B1C6" Offset="1" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Grid>
+                <Image Margin="6,0,36,0" Source="/Prospect;component/img/close2.png" />
+                <TextBlock Margin="39,8,0,7"><Run Text="关闭" /></TextBlock>
+            </Grid>
+        </Button>
+    </Grid>
+</Window>

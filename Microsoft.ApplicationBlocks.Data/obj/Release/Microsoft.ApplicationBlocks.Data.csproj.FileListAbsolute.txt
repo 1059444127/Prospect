@@ -1,0 +1,16 @@
+D:\Workspace\Prospect\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.dll
+D:\Workspace\Prospect\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.xml
+D:\Workspace\Prospect\Microsoft.ApplicationBlocks.Data\obj\Release\ResolveAssemblyReference.cache
+D:\Workspace\Prospect\Microsoft.ApplicationBlocks.Data\obj\Release\Microsoft.ApplicationBlocks.Data.dll
+C:\D\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.dll
+C:\D\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.xml
+C:\D\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\obj\Release\ResolveAssemblyReference.cache
+C:\D\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\obj\Release\Microsoft.ApplicationBlocks.Data.dll
+O:\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.dll
+O:\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.xml
+O:\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\obj\Release\Microsoft.ApplicationBlocks.Data.dll
+D:\O\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.dll
+D:\O\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.xml
+D:\O\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\obj\Release\Microsoft.ApplicationBlocks.Data.dll
+D:\O\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\obj\Release\Microsoft.ApplicationBlocks.Data.csprojAssemblyReference.cache
+D:\O\HMLD\Prospect\Microsoft.ApplicationBlocks.Data\obj\Release\Microsoft.ApplicationBlocks.Data.csproj.CoreCompileInputs.cache

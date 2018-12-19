@@ -1,0 +1,88 @@
+﻿生成启动时间为 2017/1/4 10:37:08。
+     1>项目“D:\O\HMLD\Prospect\VideoCapture\VideoCapture.vcxproj”在节点 2 上(rebuild 个目标)。
+       项目文件包含 ToolsVersion="12.0"。此工具集可能未知或缺失。在这种情况下，通过安装 MSBuild 的正确版本，或许可以解决此问题。否则，该 build 可能已因策略原因而被强制为某个特定 ToolsVersion。将该项目视为其已具有 ToolsVersion="4.0"。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=291333。
+     1>InitializeBuildStatus:
+         正在创建“Release\VideoCapture.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D VIDEOCAPTURE_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\VideoCapture.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D VIDEOCAPTURE_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\VideoCapture.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt aes.cpp md5.cpp status.cpp VideoCapture.cpp
+         aes.cpp
+         md5.cpp
+     1>md5.cpp(136): warning C4244: 'argument' : conversion from 'std::streamsize' to 'size_t', possible loss of data
+         status.cpp
+         VideoCapture.cpp
+     1>VideoCapture.cpp(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstdio(48): warning C4995: 'gets': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstdio(52): warning C4995: 'sprintf': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstdio(55): warning C4995: 'vsprintf': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstring(21): warning C4995: 'strcat': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cstring(22): warning C4995: 'strcpy': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(30): warning C4995: 'swprintf': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(31): warning C4995: 'vswprintf': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(33): warning C4995: 'wcscat': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\cwchar(35): warning C4995: 'wcscpy': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string(757): warning C4995: 'swprintf': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string(766): warning C4995: 'swprintf': name was marked as #pragma deprecated
+     1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string(775): warning C4995: 'swprintf': name was marked as #pragma deprecated
+     1>VideoCapture.cpp(121): warning C4065: switch statement contains 'default' but no 'case' labels
+     1>VideoCapture.cpp(153): warning C4101: 'hr' : unreferenced local variable
+     1>VideoCapture.cpp(257): warning C4995: 'wsprintfW': name was marked as #pragma deprecated
+     1>VideoCapture.cpp(897): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(902): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(907): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(912): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(947): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(949): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(950): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(951): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(943): warning C4101: 'Val' : unreferenced local variable
+     1>VideoCapture.cpp(987): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(989): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(990): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(991): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(983): warning C4101: 'Val' : unreferenced local variable
+     1>VideoCapture.cpp(1027): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(1029): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(1030): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(1031): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(1023): warning C4101: 'Val' : unreferenced local variable
+     1>VideoCapture.cpp(1066): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(1068): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(1069): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(1070): warning C4244: '=' : conversion from 'long' to 'float', possible loss of data
+     1>VideoCapture.cpp(1062): warning C4101: 'Val' : unreferenced local variable
+     1>VideoCapture.cpp(1123): warning C4244: 'argument' : conversion from 'float' to 'long', possible loss of data
+     1>VideoCapture.cpp(1126): warning C4244: 'argument' : conversion from 'float' to 'long', possible loss of data
+     1>VideoCapture.cpp(1129): warning C4244: 'argument' : conversion from 'float' to 'long', possible loss of data
+     1>VideoCapture.cpp(1132): warning C4244: 'argument' : conversion from 'float' to 'long', possible loss of data
+     1>VideoCapture.cpp(1489): warning C4101: 'pX2' : unreferenced local variable
+     1>VideoCapture.cpp(1579): warning C4995: 'strcpy': name was marked as #pragma deprecated
+     1>VideoCapture.cpp(1579): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D VIDEOCAPTURE_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt dllmain.cpp
+         dllmain.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Program Files\Common Files\Prospect\VideoCapture.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\VideoCapture.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Program Files\Common Files\Prospect\VideoCapture.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Program Files\Common Files\Prospect\VideoCapture.lib" /MACHINE:X86 /DLL Release\aes.obj
+         Release\dllmain.obj
+         Release\md5.obj
+         Release\status.obj
+         Release\stdafx.obj
+         Release\VideoCapture.obj
+            正在创建库 C:\Program Files\Common Files\Prospect\VideoCapture.lib 和对象 C:\Program Files\Common Files\Prospect\VideoCapture.exp
+         正在生成代码
+     1>d:\o\hmld\prospect\videocapture\videocapture.cpp(1564): warning C4715: 'Pause' : not all control paths return a value
+     1>d:\o\hmld\prospect\videocapture\videocapture.cpp(1469): warning C4715: 'RecordWMVVideo' : not all control paths return a value
+     1>d:\o\hmld\prospect\videocapture\videocapture.cpp(1342): warning C4715: 'RecordVideo' : not all control paths return a value
+         已完成代码的生成
+         VideoCapture.vcxproj -> C:\Program Files\Common Files\Prospect\VideoCapture.dll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Program Files\Common Files\Prospect\VideoCapture.dll;#2" /manifest Release\VideoCapture.dll.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Release\VideoCapture.unsuccessfulbuild”。
+         正在对“Release\VideoCapture.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\O\HMLD\Prospect\VideoCapture\VideoCapture.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.49

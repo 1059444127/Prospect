@@ -1,0 +1,2 @@
+[Options]
+Command=%_SFX_CAB_EXE_PATH%\wcu\dotNetFramework\dotNetFx35setup.exe %_SFX_CAB_EXE_PARAMETERS%

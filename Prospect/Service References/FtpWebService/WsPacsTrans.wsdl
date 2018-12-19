@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.ikang.com/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s0="http://www.ikang.com/literalTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.ikang.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.ikang.com/literalTypes">
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SaveCheckImagesSoapIn">
+    <wsdl:part name="XMLString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckImagesSoapOut">
+    <wsdl:part name="SaveCheckImagesResult" type="s:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SaveSummarySoapIn">
+    <wsdl:part name="CheckItemsID" type="s:long" />
+    <wsdl:part name="Content" type="s:string" />
+    <wsdl:part name="UserID" type="s:long" />
+    <wsdl:part name="RecordDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveSummarySoapOut">
+    <wsdl:part name="SaveSummaryResult" type="s:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckItemIndexResultSoapIn">
+    <wsdl:part name="CheckItemsID" type="s:long" />
+    <wsdl:part name="ItemIndexID" type="s:long" />
+    <wsdl:part name="ItemIndexResultTempletDescription" type="s:string" />
+    <wsdl:part name="ItemIndexResultValue" type="s:string" />
+    <wsdl:part name="ItemIndexResultDetail" type="s:string" />
+    <wsdl:part name="ItemIndexResultDiagnose" type="s:string" />
+    <wsdl:part name="ItemIndexResultDiagnoseDetail" type="s:string" />
+    <wsdl:part name="ItemIndexResultAdvice" type="s:string" />
+    <wsdl:part name="IsExeception" type="s:boolean" />
+    <wsdl:part name="UserID" type="s:long" />
+    <wsdl:part name="RecordDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckItemIndexResultSoapOut">
+    <wsdl:part name="SaveCheckItemIndexResultResult" type="s:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckItemsStateSoapIn">
+    <wsdl:part name="CheckItemsID" type="s:long" />
+    <wsdl:part name="CheckStateID" type="s:int" />
+    <wsdl:part name="DepartmentID" type="s:int" />
+    <wsdl:part name="UserID" type="s:long" />
+    <wsdl:part name="RecordDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckItemsStateSoapOut">
+    <wsdl:part name="UpdateCheckItemsStateResult" type="s:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SyncDictionarySoapIn" />
+  <wsdl:message name="SyncDictionarySoapOut">
+    <wsdl:part name="SyncDictionaryResult" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckImagesHttpGetIn">
+    <wsdl:part name="XMLString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckImagesHttpGetOut">
+    <wsdl:part name="Body" element="s0:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SaveSummaryHttpGetIn">
+    <wsdl:part name="CheckItemsID" type="s:string" />
+    <wsdl:part name="Content" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="RecordDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveSummaryHttpGetOut">
+    <wsdl:part name="Body" element="s0:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckItemIndexResultHttpGetIn">
+    <wsdl:part name="CheckItemsID" type="s:string" />
+    <wsdl:part name="ItemIndexID" type="s:string" />
+    <wsdl:part name="ItemIndexResultTempletDescription" type="s:string" />
+    <wsdl:part name="ItemIndexResultValue" type="s:string" />
+    <wsdl:part name="ItemIndexResultDetail" type="s:string" />
+    <wsdl:part name="ItemIndexResultDiagnose" type="s:string" />
+    <wsdl:part name="ItemIndexResultDiagnoseDetail" type="s:string" />
+    <wsdl:part name="ItemIndexResultAdvice" type="s:string" />
+    <wsdl:part name="IsExeception" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="RecordDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckItemIndexResultHttpGetOut">
+    <wsdl:part name="Body" element="s0:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckItemsStateHttpGetIn">
+    <wsdl:part name="CheckItemsID" type="s:string" />
+    <wsdl:part name="CheckStateID" type="s:string" />
+    <wsdl:part name="DepartmentID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="RecordDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckItemsStateHttpGetOut">
+    <wsdl:part name="Body" element="s0:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SyncDictionaryHttpGetIn" />
+  <wsdl:message name="SyncDictionaryHttpGetOut">
+    <wsdl:part name="Body" element="s0:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckImagesHttpPostIn">
+    <wsdl:part name="XMLString" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckImagesHttpPostOut">
+    <wsdl:part name="Body" element="s0:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SaveSummaryHttpPostIn">
+    <wsdl:part name="CheckItemsID" type="s:string" />
+    <wsdl:part name="Content" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="RecordDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveSummaryHttpPostOut">
+    <wsdl:part name="Body" element="s0:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckItemIndexResultHttpPostIn">
+    <wsdl:part name="CheckItemsID" type="s:string" />
+    <wsdl:part name="ItemIndexID" type="s:string" />
+    <wsdl:part name="ItemIndexResultTempletDescription" type="s:string" />
+    <wsdl:part name="ItemIndexResultValue" type="s:string" />
+    <wsdl:part name="ItemIndexResultDetail" type="s:string" />
+    <wsdl:part name="ItemIndexResultDiagnose" type="s:string" />
+    <wsdl:part name="ItemIndexResultDiagnoseDetail" type="s:string" />
+    <wsdl:part name="ItemIndexResultAdvice" type="s:string" />
+    <wsdl:part name="IsExeception" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="RecordDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SaveCheckItemIndexResultHttpPostOut">
+    <wsdl:part name="Body" element="s0:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckItemsStateHttpPostIn">
+    <wsdl:part name="CheckItemsID" type="s:string" />
+    <wsdl:part name="CheckStateID" type="s:string" />
+    <wsdl:part name="DepartmentID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="RecordDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCheckItemsStateHttpPostOut">
+    <wsdl:part name="Body" element="s0:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SyncDictionaryHttpPostIn" />
+  <wsdl:message name="SyncDictionaryHttpPostOut">
+    <wsdl:part name="Body" element="s0:string" />
+  </wsdl:message>
+  <wsdl:portType name="WsPacsTransSoap">
+    <wsdl:operation name="SaveCheckImages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS保存项目图像</wsdl:documentation>
+      <wsdl:input message="tns:SaveCheckImagesSoapIn" />
+      <wsdl:output message="tns:SaveCheckImagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSummary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS保存指标内容组合</wsdl:documentation>
+      <wsdl:input message="tns:SaveSummarySoapIn" />
+      <wsdl:output message="tns:SaveSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckItemIndexResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS保存指标结果</wsdl:documentation>
+      <wsdl:input message="tns:SaveCheckItemIndexResultSoapIn" />
+      <wsdl:output message="tns:SaveCheckItemIndexResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckItemsState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS检查项目状态更新</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCheckItemsStateSoapIn" />
+      <wsdl:output message="tns:UpdateCheckItemsStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncDictionary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS基础字典同步</wsdl:documentation>
+      <wsdl:input message="tns:SyncDictionarySoapIn" />
+      <wsdl:output message="tns:SyncDictionarySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WsPacsTransHttpGet">
+    <wsdl:operation name="SaveCheckImages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS保存项目图像</wsdl:documentation>
+      <wsdl:input message="tns:SaveCheckImagesHttpGetIn" />
+      <wsdl:output message="tns:SaveCheckImagesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSummary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS保存指标内容组合</wsdl:documentation>
+      <wsdl:input message="tns:SaveSummaryHttpGetIn" />
+      <wsdl:output message="tns:SaveSummaryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckItemIndexResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS保存指标结果</wsdl:documentation>
+      <wsdl:input message="tns:SaveCheckItemIndexResultHttpGetIn" />
+      <wsdl:output message="tns:SaveCheckItemIndexResultHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckItemsState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS检查项目状态更新</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCheckItemsStateHttpGetIn" />
+      <wsdl:output message="tns:UpdateCheckItemsStateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncDictionary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS基础字典同步</wsdl:documentation>
+      <wsdl:input message="tns:SyncDictionaryHttpGetIn" />
+      <wsdl:output message="tns:SyncDictionaryHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WsPacsTransHttpPost">
+    <wsdl:operation name="SaveCheckImages">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS保存项目图像</wsdl:documentation>
+      <wsdl:input message="tns:SaveCheckImagesHttpPostIn" />
+      <wsdl:output message="tns:SaveCheckImagesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSummary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS保存指标内容组合</wsdl:documentation>
+      <wsdl:input message="tns:SaveSummaryHttpPostIn" />
+      <wsdl:output message="tns:SaveSummaryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckItemIndexResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS保存指标结果</wsdl:documentation>
+      <wsdl:input message="tns:SaveCheckItemIndexResultHttpPostIn" />
+      <wsdl:output message="tns:SaveCheckItemIndexResultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckItemsState">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS检查项目状态更新</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCheckItemsStateHttpPostIn" />
+      <wsdl:output message="tns:UpdateCheckItemsStateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncDictionary">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">PIS基础字典同步</wsdl:documentation>
+      <wsdl:input message="tns:SyncDictionaryHttpPostIn" />
+      <wsdl:output message="tns:SyncDictionaryHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsPacsTransSoap" type="tns:WsPacsTransSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="SaveCheckImages">
+      <soap:operation soapAction="http://www.ikang.com/SaveCheckImages" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSummary">
+      <soap:operation soapAction="http://www.ikang.com/SaveSummary" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckItemIndexResult">
+      <soap:operation soapAction="http://www.ikang.com/SaveCheckItemIndexResult" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckItemsState">
+      <soap:operation soapAction="http://www.ikang.com/UpdateCheckItemsState" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncDictionary">
+      <soap:operation soapAction="http://www.ikang.com/SyncDictionary" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsPacsTransSoap12" type="tns:WsPacsTransSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="SaveCheckImages">
+      <soap12:operation soapAction="http://www.ikang.com/SaveCheckImages" style="rpc" />
+      <wsdl:input>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSummary">
+      <soap12:operation soapAction="http://www.ikang.com/SaveSummary" style="rpc" />
+      <wsdl:input>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckItemIndexResult">
+      <soap12:operation soapAction="http://www.ikang.com/SaveCheckItemIndexResult" style="rpc" />
+      <wsdl:input>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckItemsState">
+      <soap12:operation soapAction="http://www.ikang.com/UpdateCheckItemsState" style="rpc" />
+      <wsdl:input>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncDictionary">
+      <soap12:operation soapAction="http://www.ikang.com/SyncDictionary" style="rpc" />
+      <wsdl:input>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="encoded" namespace="http://www.ikang.com/" encodingStyle="http://www.w3.org/2003/05/soap-encoding" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsPacsTransHttpGet" type="tns:WsPacsTransHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SaveCheckImages">
+      <http:operation location="/SaveCheckImages" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSummary">
+      <http:operation location="/SaveSummary" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckItemIndexResult">
+      <http:operation location="/SaveCheckItemIndexResult" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckItemsState">
+      <http:operation location="/UpdateCheckItemsState" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncDictionary">
+      <http:operation location="/SyncDictionary" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsPacsTransHttpPost" type="tns:WsPacsTransHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SaveCheckImages">
+      <http:operation location="/SaveCheckImages" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSummary">
+      <http:operation location="/SaveSummary" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckItemIndexResult">
+      <http:operation location="/SaveCheckItemIndexResult" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckItemsState">
+      <http:operation location="/UpdateCheckItemsState" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncDictionary">
+      <http:operation location="/SyncDictionary" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsPacsTrans">
+    <wsdl:port name="WsPacsTransSoap" binding="tns:WsPacsTransSoap">
+      <soap:address location="http://192.168.100.213/webservice/WsPacsTrans.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsPacsTransSoap12" binding="tns:WsPacsTransSoap12">
+      <soap12:address location="http://192.168.100.213/webservice/WsPacsTrans.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsPacsTransHttpGet" binding="tns:WsPacsTransHttpGet">
+      <http:address location="http://192.168.100.213/webservice/WsPacsTrans.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsPacsTransHttpPost" binding="tns:WsPacsTransHttpPost">
+      <http:address location="http://192.168.100.213/webservice/WsPacsTrans.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,290 @@
+﻿<Window x:Class="com.cloud.prospect.SystemSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Background="#FFF0F6FD"  TextOptions.TextFormattingMode="Display"
+        xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit" ResizeMode="NoResize"
+        Title="系统设置" Height="708" Width="689" FontSize="15" Icon="/Prospect;component/img/logo.png">
+    <Grid>
+        <TabControl   Background="#FFDDF0F9">
+            <TabItem Background="AliceBlue" Header="项目设置A">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="250" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="123*" />
+                            <ColumnDefinition Width="284*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="110" />
+                        </Grid.RowDefinitions>
+                        <GroupBox Header="检查部位及收费设置" Grid.ColumnSpan="2">
+                            <Grid>
+                                <Custom:DataGrid AutoGenerateColumns="False" x:Name="dgBodyArea" IsReadOnly="True">
+                                    <Custom:DataGrid.RowStyle>
+                                        <Style TargetType="Custom:DataGridRow">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="LightGray"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Custom:DataGrid.RowStyle>
+                                    <Custom:DataGrid.Columns>
+                                        <Custom:DataGridTextColumn Header="检查部位" MinWidth ="240" Binding="{Binding BodyArea_Name}" />
+                                        <Custom:DataGridTextColumn Header="黑白超收费"  Binding="{Binding Charge1}" />
+                                        <Custom:DataGridTextColumn Header="彩超收费"  Binding="{Binding Charge2}" />
+                                    </Custom:DataGrid.Columns>
+                                </Custom:DataGrid>
+                            </Grid>
+                        </GroupBox>
+                        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                            <Label Content="部位名称" Height="28" HorizontalAlignment="Left" Margin="18,6,0,0" Name="label1" VerticalAlignment="Top" Width="78" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="18,40,0,0" Name="tbxName" VerticalAlignment="Top" Width="120" />
+                            <Label Content="价格一" Height="28" HorizontalAlignment="Left" Margin="144,6,0,0" Name="label2" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="144,40,0,0" Name="tbxCharge1" VerticalAlignment="Top" Width="90" />
+                            <Label Content="价格二" Height="28" HorizontalAlignment="Left" Margin="240,6,0,0" Name="label3" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="240,40,0,0" Name="tbxCharge2" VerticalAlignment="Top" Width="90" />
+                            <Button Content="增加" Height="23" HorizontalAlignment="Left" Margin="86,76,0,0" Name="btnAdd" VerticalAlignment="Top" Width="75" Click="btnAdd_Click" />
+                            <Button Content="删除" Height="23" HorizontalAlignment="Left" Margin="191,76,0,0" Name="btnDelete" VerticalAlignment="Top" Width="75" Click="btnDelete_Click" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" TextOptions.TextFormattingMode="Display">
+                            <GroupBox Header="联系地址" >
+                                <Custom:DataGrid AutoGenerateColumns="False" x:Name="dgAddress" IsReadOnly="True" Margin="0,0,0,80">
+                                    <Custom:DataGrid.RowStyle>
+                                        <Style TargetType="Custom:DataGridRow">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="LightGray"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Custom:DataGrid.RowStyle>
+                                    <Custom:DataGrid.Columns>
+                                        <Custom:DataGridTextColumn Header="地址部位" MinWidth ="220" Binding="{Binding DetailAddress}" />
+                                    </Custom:DataGrid.Columns>
+                                </Custom:DataGrid>
+                            </GroupBox>
+                            <Label Content="输入内容" Height="28" HorizontalAlignment="Left" Margin="14,240,0,0" Name="label5" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="90,242,0,0" Name="tbxAddress" VerticalAlignment="Top" Width="154" />
+                            <Button Content="增加" Height="23" HorizontalAlignment="Left" Margin="30,276,0,0" Name="btnAddAddress" Click="btnAddAddress_Click" VerticalAlignment="Top" Width="75" />
+                            <Button Content="删除" Height="23" HorizontalAlignment="Left" Margin="138,276,0,0" Name="btnDeleteAddress" Click="btnDeleteAddress_Click" VerticalAlignment="Top" Width="75" />
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <GroupBox Header="检查方法" Margin="0,0,0,80" >
+                                <Custom:DataGrid AutoGenerateColumns="False" x:Name="dgExamineMethod" IsReadOnly="True">
+                                    <Custom:DataGrid.RowStyle>
+                                        <Style TargetType="Custom:DataGridRow">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="LightGray"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Custom:DataGrid.RowStyle>
+                                    <Custom:DataGrid.Columns>
+                                        <Custom:DataGridTextColumn Header="检查方法名称" MinWidth ="200" Binding="{Binding Name}" />
+                                    </Custom:DataGrid.Columns>
+                                </Custom:DataGrid>
+                            </GroupBox>
+                            <Label Content="输入内容" Height="28" HorizontalAlignment="Left" Margin="14,247,0,0" Name="label4" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="90,249,0,0" Name="tbxMethod" VerticalAlignment="Top" Width="154" />
+                            <Button Content="增加" Height="23" HorizontalAlignment="Left" Margin="30,283,0,0" Name="btnAddMethod" Click="btnAddMethod_Click" VerticalAlignment="Top" Width="75" />
+                            <Button Content="删除" Height="23" HorizontalAlignment="Right" Margin="0,283,37,0" Name="btnDeleteMethod" Click="btnDeleteMethod_Click" VerticalAlignment="Top" Width="75" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Background="AliceBlue" Header="项目设置B">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="374" />
+                        <ColumnDefinition Width="283" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.Column="0" >
+                        <GroupBox Header="设备型号" Margin="0,0,0,69">
+                            <Custom:DataGrid AutoGenerateColumns="False" x:Name="dgDevice" IsReadOnly="True">
+                                <Custom:DataGrid.RowStyle>
+                                    <Style TargetType="Custom:DataGridRow">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="LightGray"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Custom:DataGrid.RowStyle>
+                                <Custom:DataGrid.Columns>
+                                    <Custom:DataGridTextColumn Header="设备型号" MinWidth ="200" Binding="{Binding Device_Name}" />
+                                    <Custom:DataGridTextColumn Header="主机AE名称"  MinWidth ="150"  />
+                                </Custom:DataGrid.Columns>
+                            </Custom:DataGrid>
+                        </GroupBox>
+                        <Button Content="增加" Height="23" HorizontalAlignment="Left" Margin="69,288,0,0" Name="btnAddDev" Click="btnAddDev_Click"  VerticalAlignment="Top" Width="75" />
+                        <Button Content="删除" Height="23" HorizontalAlignment="Left" Margin="201,288,0,0" Name="btnDeleteDev" Click="btnDeleteDev_Click" VerticalAlignment="Top" Width="75" />
+                        <Label Content="请输入" Height="28" HorizontalAlignment="Left" Margin="50,251,0,0" Name="label6" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="120,253,0,0" Name="tbxDevice" VerticalAlignment="Top" Width="156" />
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="0" >
+                        <GroupBox Header="临床诊断" Margin="0,0,0,69">
+                            <Custom:DataGrid AutoGenerateColumns="False" x:Name="dgDiagnosis" IsReadOnly="True">
+                                <Custom:DataGrid.RowStyle>
+                                    <Style TargetType="Custom:DataGridRow">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="LightGray"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Custom:DataGrid.RowStyle>
+                                <Custom:DataGrid.Columns>
+                                    <Custom:DataGridTextColumn Header="临床诊断条目" MinWidth ="300" Binding="{Binding Diagnosis_Name}" />
+                                </Custom:DataGrid.Columns>
+                            </Custom:DataGrid>
+                        </GroupBox>
+                        <Button Content="增加" Height="23" HorizontalAlignment="Left" x:Name="btnAddDiagnosis" Click="btnAddDiagnosis_Click" Margin="69,288,0,0"  VerticalAlignment="Top" Width="75" />
+                        <Button Content="删除" Height="23" HorizontalAlignment="Left" x:Name="btnDeleteDiagnosis" Click="btnDeleteDiagnosis_Click" Margin="201,288,0,0"  VerticalAlignment="Top" Width="75" />
+                        <Label Content="请输入" Height="28" HorizontalAlignment="Left" Margin="50,251,0,0"  VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="120,254,0,0" x:Name="tbxDiagnosis"  VerticalAlignment="Top" Width="156" />
+                    </Grid>
+                    <Grid Grid.Column="1" Grid.Row="0">
+                        <GroupBox Header="自定义一" Margin="0,0,0,69">
+                            <Custom:DataGrid AutoGenerateColumns="False" x:Name="dgUserDefine1" IsReadOnly="True">
+                                <Custom:DataGrid.RowStyle>
+                                    <Style TargetType="Custom:DataGridRow">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="LightGray"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Custom:DataGrid.RowStyle>
+                                <Custom:DataGrid.Columns>
+                                    <Custom:DataGridTextColumn Header="名称" MinWidth ="200" Binding="{Binding UserDef_Name}" />
+                                </Custom:DataGrid.Columns>
+                            </Custom:DataGrid>
+                        </GroupBox>
+                        <TextBox Height="23" HorizontalAlignment="Left" Name="tbxUserDef1" VerticalAlignment="Top" Width="156" Grid.Column="1" Margin="92,253,0,0" />
+                        <Label Content="请输入" Height="28" HorizontalAlignment="Left" Name="label7" VerticalAlignment="Top" Grid.Column="1" Margin="20,251,0,0" />
+                        <Button Content="删除" Height="23" HorizontalAlignment="Left" Name="btDeleteUserDef1" Click="btDeleteUserDef1_Click" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="173,288,0,0" />
+                        <Button Content="增加" Height="23" HorizontalAlignment="Left" Name="btnAddUserDef1" Click="btnAddUserDef1_Click" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="51,288,0,0" />
+
+                    </Grid>
+                    <Grid Grid.Column="1" Grid.Row="1">
+                        <GroupBox Header="自定义二" Margin="0,0,0,69">
+                            <Custom:DataGrid AutoGenerateColumns="False" x:Name="dgUserDefine2" IsReadOnly="True">
+                                <Custom:DataGrid.RowStyle>
+                                    <Style TargetType="Custom:DataGridRow">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="LightGray"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Custom:DataGrid.RowStyle>
+                                <Custom:DataGrid.Columns>
+                                    <Custom:DataGridTextColumn Header="名称" MinWidth ="200" Binding="{Binding UserDef_Name}" />
+                                </Custom:DataGrid.Columns>
+                            </Custom:DataGrid>
+                        </GroupBox>
+                        <TextBox Name="tbxUserDef2" Height="23" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="156" Grid.Column="1" Margin="92,253,0,0" />
+                        <Label Content="请输入" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="20,251,0,0" />
+                        <Button Name="btnDeleteUserDef2" Click="btnDeleteUserDef2_Click" Content="删除" Height="23" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="173,288,0,0" />
+                        <Button Name="btnAddUserDef2" Click="btnAddUserDef2_Click" Content="增加" Height="23" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="51,288,0,0" />
+
+                    </Grid>
+                </Grid>
+
+            </TabItem>
+            <TabItem Background="AliceBlue" Header="科室医院设置">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="227" />
+                        <ColumnDefinition Width="430" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <GroupBox Header="科室" Height="564" Margin="0,0,0,69">
+                            <Custom:DataGrid SelectionChanged="dgDepartment_SelectionChanged" AutoGenerateColumns="False" x:Name="dgDepartment" IsReadOnly="True">
+                                <Custom:DataGrid.RowStyle>
+                                    <Style TargetType="Custom:DataGridRow">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="LightGray"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Custom:DataGrid.RowStyle>
+                                <Custom:DataGrid.Columns>
+                                    <Custom:DataGridTextColumn Header="科室名称" MinWidth="170" Binding="{Binding Name}" />
+                                </Custom:DataGrid.Columns>
+                            </Custom:DataGrid>
+                        </GroupBox>
+                        <Button Content="增加" Height="23" HorizontalAlignment="Left" Margin="29,604,0,0" Name="btnAddDept" Click="btnAddDept_Click" VerticalAlignment="Top" Width="75" />
+                        <Button Content="删除" Height="23" HorizontalAlignment="Left" Margin="125,604,0,0" Name="btnDeleteDept" Click="btnDeleteDept_Click" VerticalAlignment="Top" Width="75" />
+                        <Label Content="请输入" Height="28" HorizontalAlignment="Left" Margin="6,570,0,0" Name="label8" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="60,572,0,0" Name="tbxDept" VerticalAlignment="Top" Width="156" />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <GroupBox Header="医生信息" Height="564" Margin="0,0,0,69">
+                            <Custom:DataGrid AutoGenerateColumns="False" x:Name="dgDoctor" IsReadOnly="True">
+                                <Custom:DataGrid.RowStyle>
+                                    <Style TargetType="Custom:DataGridRow">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="LightGray"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Custom:DataGrid.RowStyle>
+                                <Custom:DataGrid.Columns>
+                                    <Custom:DataGridTextColumn Header="医生姓名" MinWidth ="100" Binding="{Binding Name}" />
+                                    <Custom:DataGridTextColumn Header="医生角色" MinWidth ="100" Binding="{Binding Profile}" />
+                                    <Custom:DataGridTextColumn Header="登陆名称" MinWidth ="100" Binding="{Binding Name}" />
+                                </Custom:DataGrid.Columns>
+                            </Custom:DataGrid>
+                        </GroupBox>
+                        <Label Content="姓名" Height="28" HorizontalAlignment="Left" Margin="12,570,0,0" Name="label9" VerticalAlignment="Top" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="62,575,0,0" Name="tbxDoctorName" VerticalAlignment="Top" Width="95" />
+                        <Label Content="密   码" Height="28" HorizontalAlignment="Right" Margin="0,571,200,0" Name="label10" VerticalAlignment="Top" />
+                        <PasswordBox Height="23" HorizontalAlignment="Right" Margin="0,575,96,0" Name="tbxPassword" VerticalAlignment="Top" Width="95" />
+                        <Label Content="角色" Height="28" HorizontalAlignment="Left" Margin="12,600,0,0" Name="label11" VerticalAlignment="Top" />
+                        <ComboBox IsEditable="True" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="62,602,0,0" Name="tbxDoctorProfile" VerticalAlignment="Top" Width="95" >
+                            <ComboBox.Items>
+                                <ComboBoxItem>登记医生</ComboBoxItem>
+                                <ComboBoxItem>记录医生</ComboBoxItem>
+                                <ComboBoxItem>申请医生</ComboBoxItem>
+                                <ComboBoxItem>送检医生</ComboBoxItem>
+                                <ComboBoxItem>诊断医生</ComboBoxItem>
+                                <ComboBoxItem>管理员</ComboBoxItem>
+                            </ComboBox.Items>
+                        </ComboBox>
+                        <Label Content="确认密码" Height="28" HorizontalAlignment="Left" Margin="163,600,0,0" Name="label12" VerticalAlignment="Top" />
+                        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="239,602,0,0" Name="tbxPassword2" VerticalAlignment="Top" Width="95" />
+                        <Button Content="增加" Height="23" HorizontalAlignment="Left" Margin="349,575,0,0" Name="btnAddDoctor" Click="btnAddDoctor_Click" VerticalAlignment="Top" Width="61" />
+                        <Button Content="删除" Height="23" HorizontalAlignment="Left" Margin="349,602,0,0" Name="btnDeleteDoctor" Click="btnDeleteDoctor_Click" VerticalAlignment="Top" Width="61" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
